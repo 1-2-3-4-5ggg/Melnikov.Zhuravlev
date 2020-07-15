@@ -1,0 +1,13 @@
+version: 2.1
+
+orbs:
+  win: circleci/windows@2.2.0
+jobs:
+ build:
+  docker:
+   - image: circleci/python:3.8.3
+  steps:
+   - run: jupyter nbconvert Domashka2.ipynb 
+   - store_artifacts: 
+      path: Domashka2.html
+destination: Domashka2.html  
