@@ -1,4 +1,3 @@
-  
 version: 2.1
 
 orbs:
@@ -7,8 +6,7 @@ jobs:
   build:
     executor: win/default
     steps:
-    - checkout
-    - run: jupyter nbconvert Domashka2.ipynb
-    - store_artifacts:
-        path: Domashka2.html
-    - destination: Domashka2.html
+     - checkout
+     - run: jupyter nbconvert Domashka2.ipynb
+     - store_artifacts:
+         path: Domashka2.html
