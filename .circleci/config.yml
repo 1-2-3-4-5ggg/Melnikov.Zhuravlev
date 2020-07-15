@@ -7,6 +7,6 @@ jobs:
     executor: win/default
     steps:
      - checkout
-     - run: jupyter nbconvert - to html Domashka2.html
+     - run: jupyter nbconvert - to html Domashka2.ipynb
      - store_artifacts:
          path: Domashka2.html
