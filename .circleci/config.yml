@@ -11,4 +11,4 @@ jobs:
    - run: jupyter nbconvert Domashka2.ipynb
    - store_artifacts:
       path: Domashka2.html
-destination: Domashka2.html
+  destination: Domashka2.html
