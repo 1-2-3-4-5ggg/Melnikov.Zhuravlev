@@ -1,17 +1,18 @@
-version: 2.1
-jobs:
-build:
-docker:
-- image: circleci/python:3.6.4
-steps:
-- checkout
-- run: sudo pip install jupyter_client
-- run: sudo pip install nbconvert
-- run: sudo pip install numpy
-- run: sudo pip install matplotlib
-- run: sudo pip install sklearn
-- run: sudo python3 -m pip install ipykernel
-- run: sudo python3 -m ipykernel install --user
-- run: jupyter-nbconvert --execute ./Domashka2.ipynb
-- store_artifacts:
-path: ./Domashka2.html
+ version: 2.1
+ 
+ jobs:
+   build:
+    docker:
+     - image: circleci/python:3.6.4
+    steps:
+    - checkout
+    - run: sudo pip install jupyter_client
+    - run: sudo pip install nbconvert
+    - run: sudo pip install numpy
+    - run: sudo pip install matplotlib
+    - run: sudo pip install sklearn
+    - run: sudo python3 -m pip install ipykernel
+    - run: sudo python3 -m ipykernel install --user
+    - run: jupyter-nbconvert --execute ./Domashka2.ipynb
+    - store_artifacts:
+       path: ./Domashka2.html
