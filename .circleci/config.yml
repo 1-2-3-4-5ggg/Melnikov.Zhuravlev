@@ -9,4 +9,4 @@ jobs:
      - checkout
      - run:  jupyter-nbconvert --execute ./Domashka2.ipynb
      - store_artifacts:
-        path:Domashka2.html
+        path: Domashka2.html
