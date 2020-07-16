@@ -7,10 +7,5 @@ jobs:
       - checkout
       - run: jupyter-nbconvert --execute./Domashka2.ipynb
     test:
-workflows:
-  build_and_test:
-    jobs:
+     jobs:
       - build
-      - test:
-          requires:
-            - build
