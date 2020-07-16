@@ -5,8 +5,12 @@ jobs:
       - image: circleci/python:3.6.4
     steps:
       - checkout
-      - run:
-          name: convert to html
-          command: |
-            jupyter-nbconvert --execute./Domashka2.ipynb
-      - path: ./Domashka2.html
+      - run: jupyter-nbconvert --execute./Domashka2.ipynb
+    test:
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
