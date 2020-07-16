@@ -1,13 +1,12 @@
 version: 2.1
-
-orbs:
-  win: circleci/windows@2.3.0
 jobs:
   build:
-    executor: win/default
+    docker:
+      - image: circleci/python:3.6.4
     steps:
-     - checkout
-     - run: jupyter-nbconvert --execute ./Domashka2.ipynb
-     - store_artifacts:
-        path: ./Domashka2.html
-        destination: Domashka2.html
+      - checkout
+      - run:
+          name: convert to html
+          command: |
+            jupyter-nbconvert --execute./Domashka2.ipynb
+      - path: ./Domashka2.html
