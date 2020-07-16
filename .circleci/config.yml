@@ -1,16 +1,18 @@
 version: 2.1
 jobs:
   build:
+    working_directory: ~/circleci-demo-python-django
     docker:
-      - image: circleci/python:3.6.4
+      - image: circleci/python:3.6.4  
     steps:
-      - checkout
-      - run: jupyter-nbconvert --execute./Domashka2.ipynb
-    test:
-workflows:
-  build_and_test:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
+      - checkout  
+      - run:
+          command: |  
+            sudo pip install jupyter_client
+            sudo pip install nbconvert
+      - run:
+        command: |
+            jupyter-nbconvert --execute./Domashka2.ipynb
+      - store_artifacts:
+          path: Domashka2.html
+          destination: D2
